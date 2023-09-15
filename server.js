@@ -1,5 +1,9 @@
+require('dotenv').config()
 const express = require('express')
+const connectDb = require('./db/mongodb')
+const { appConfig, db } = require('./config')
 
 const app = express()
-const port = 8080
-app.listen(port, () => console.log(`listen on ${port}`))
+
+connectDb(db)
+app.listen(appConfig.port, () => console.log(`listen on ${appConfig.port}`))
