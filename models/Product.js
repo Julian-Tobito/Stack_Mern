@@ -3,14 +3,16 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const productSchema = Schema({
-    name: String,
+
+
     size: Number,
+    name: String,
     unitaryPrice: Number,
     imgUrl: String,
     description: String
 
 }, {
-    timesTamps: true
+    timestamps: true
 
 })
-module.exports = mongoose.model('Products', ProductSchema)
+module.exports = mongoose.model('Products', productSchema)
